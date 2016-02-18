@@ -17,6 +17,10 @@ class VideosController < ApplicationController
     end
   end
 
+  def edit
+    @video = Video.find(params[:id])
+  end
+
   def video_params
     params.require(:video).permit(
       :title,
