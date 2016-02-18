@@ -1,18 +1,46 @@
 <%= form_for @video do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <div class="field">
+    <%= f.label :embed_url, "YouTube Id" %><br>
+    <%= f.text_field :embed_url %>
+  </div>
   <br>
-  <%= f.label :released_on %>
-  <%= f.date_select :released_on, order: [:month, :day, :year] %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
   <br>
-  <%= f.label :embed_url, "YouTube Id" %>
-  <%= f.text_field :embed_url %>
+  <div class="field">
+    <%= f.label :album %><br>
+    <%= f.text_field :album %>
+  </div>
   <br>
-  <%= f.submit "Create!" %>
+  <div class="field">
+    <%= f.label :featured_artists %><br>
+    <%= f.text_field :featured_artists %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :released_on %><br>
+    <%= f.date_select :released_on, order: [:month, :day, :year] %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :tags %><br>
+    <%= f.text_field :tags %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create!" %>
+  </div>
 <% end %>
 
-<ul>
-<% @video.errors.full_messages.each do |message| %>
-  <li><%= message %></li>
+<% if @video.errors.any? %>
+  <div id="error_explanation">
+  <p><strong>Errors found:</strong></p>
+    <ul>
+      <% @video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
-</ul>

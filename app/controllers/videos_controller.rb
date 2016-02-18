@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-
   def index
     @videos = Video.all
   end
@@ -19,6 +18,13 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :embed_url, :released_on, :featured_artists)
+    params.require(:video).permit(
+      :title,
+      :album,
+      :embed_url,
+      :featured_artists,
+      :tags,
+      :released_on
+    )
   end
 end
