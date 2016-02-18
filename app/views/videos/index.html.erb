@@ -5,7 +5,7 @@
       <h4><%= link_to video.title, video.youtube_link %></h4>
       <iframe class="video-embed" src="<%= video.embed_link %>" frameborder="0" allowfullscreen></iframe>
       <div class="controls">
-        <span><%= link_to "Edit", edit_video_path(video) %></span>
+        <span><%= link_to "Edit", edit_video_path(video) %></span> &nbsp; | &nbsp;
         <span><%= link_to "Remove", video_path(video.id), method: "DELETE" %></span>
       </div>
     </article>
