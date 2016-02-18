@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  validates :embed_url, uniqueness: true, presence: true
+  validates :embed_url, uniqueness: true, presence: true, length: { is: 11 }
   validates :title, presence: true
 
   def youtube_link
