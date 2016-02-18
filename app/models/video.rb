@@ -1,12 +1,12 @@
 class Video < ActiveRecord::Base
-  validates :embed_url, uniqueness: true, presence: true, length: { is: 11 }
+  validates :youtube_id, uniqueness: true, presence: true, length: { is: 11 }
   validates :title, presence: true
 
   def youtube_link
-    "https://youtu.be/#{self.embed_url}"
+    "https://youtu.be/#{self.youtube_id}"
   end
 
   def embed_link
-    "https://www.youtube.com/embed/#{self.embed_url}"
+    "https://www.youtube.com/embed/#{self.youtube_id}"
   end
 end

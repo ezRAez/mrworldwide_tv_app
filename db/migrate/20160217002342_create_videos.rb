@@ -1,7 +1,7 @@
 class CreateVideos < ActiveRecord::Migration
   def change
     create_table :videos do |t|
-      t.string :embed_url
+      t.string :youtube_id
       t.string :title
       t.string :album
       t.string :featured_artists

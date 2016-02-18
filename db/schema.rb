@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160217002342) do
   enable_extension "plpgsql"
 
   create_table "videos", force: :cascade do |t|
-    t.string   "embed_url"
+    t.string   "youtube_id"
     t.string   "title"
     t.string   "album"
     t.string   "featured_artists"

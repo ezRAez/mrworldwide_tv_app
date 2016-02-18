@@ -1,7 +1,7 @@
 Video.delete_all
 
 Video.create(
-  embed_url:        "EPo5wWmKEaI",
+  youtube_id:        "EPo5wWmKEaI",
   title:            "Give Me Everything",
   album:            "Planet Pit",
   featured_artists: "Ne-Yo, Afrojack, Nayer",
@@ -10,7 +10,7 @@ Video.create(
 )
 
 Video.create(
-  embed_url:        "bTXJQ5ql5Fw",
+  youtube_id:        "bTXJQ5ql5Fw",
   title:            "Time of Our Lives",
   album:            "Globalization",
   featured_artists: "Ne-Yo",
@@ -19,7 +19,7 @@ Video.create(
 )
 
 Video.create(
-  embed_url:        "SmM0653YvXU",
+  youtube_id:        "SmM0653YvXU",
   title:            "Rain Over Me",
   album:            "Planet Pit",
   featured_artists: "Marc Anthony",
@@ -28,7 +28,7 @@ Video.create(
 )
 
 Video.create(
-  embed_url:        "hHUbLv4ThOo",
+  youtube_id:        "hHUbLv4ThOo",
   title:            "Timber",
   album:            "Meltdown",
   featured_artists: "Ke$ha",

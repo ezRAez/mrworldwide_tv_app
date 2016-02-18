@@ -21,7 +21,7 @@ class VideosController < ApplicationController
     params.require(:video).permit(
       :title,
       :album,
-      :embed_url,
+      :youtube_id,
       :featured_artists,
       :tags,
       :released_on
