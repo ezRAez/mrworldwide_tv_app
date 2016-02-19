@@ -1,5 +1,9 @@
-
 <main>
+  <% if flash[:message] %>
+    <div class="messages">
+      <p><strong><em><%= flash[:message] %></em></strong></p>
+    </div>
+  <% end %>
   <% @videos.each do |video| %>
     <article>
       <h4><%= link_to video.title, video.youtube_link %></h4>

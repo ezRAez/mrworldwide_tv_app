@@ -1,4 +1,7 @@
 class VideosController < ApplicationController
+
+  ################### ROUTES #####################
+
   def index
     @videos = Video.all
   end
@@ -29,6 +32,16 @@ class VideosController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @video = Video.find(params[:id])
+    @video.destroy
+
+    flash[:message] = "'#{@video.title}' removed!"
+    redirect_to videos_path
+  end
+
+  ################### HELPERS #####################
 
   def video_params
     params.require(:video).permit(

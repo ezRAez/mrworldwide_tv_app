@@ -50,7 +50,8 @@ h3,
 h4,
 nav,
 form,
-.controls {
+.controls,
+.messages {
   text-align: center;
 }
 
