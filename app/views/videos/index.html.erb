@@ -5,7 +5,7 @@
     </div>
   <% end %>
   <% @videos.each do |video| %>
-    <article>
+    <article id="video-<%= video.id %>">
       <h4><%= link_to video.title, video.youtube_link %></h4>
       <iframe class="video-embed" src="<%= video.embed_link %>" frameborder="0" allowfullscreen></iframe>
       <div class="controls">
