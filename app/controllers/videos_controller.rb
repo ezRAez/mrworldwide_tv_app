@@ -14,7 +14,7 @@ class VideosController < ApplicationController
     @video = Video.new(self.video_params)
 
     if @video.save
-      redirect_to videos_path(anchor: "video-#{@video.id}")
+      redirect_to videos_path(anchor: @video.fragment_id)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class VideosController < ApplicationController
   def update
     @video = Video.find(params[:id])
     if @video.update(self.video_params)
-      redirect_to videos_path(anchor: "video-#{@video.id}")
+      redirect_to videos_path(anchor: @video.fragment_id)
     else
       render :edit
     end

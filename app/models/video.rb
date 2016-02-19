@@ -9,4 +9,8 @@ class Video < ActiveRecord::Base
   def embed_link
     "https://www.youtube.com/embed/#{self.youtube_id}"
   end
+
+  def fragment_id
+    "video-#{self.id}"
+  end
 end
