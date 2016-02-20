@@ -1,0 +1,18 @@
+<h4>Log in, old friend!</h4>
+
+<div class="form-container">
+  <% if flash[:message] %>
+    <div class="messages">
+      <p><strong><em><%= flash[:message] %></em></strong></p>
+    </div>
+  <% end %>
+  <%= bootstrap_form_tag url: session_path do |f| %>
+      <%= f.text_field :email %>
+      <%= f.password_field :password %>
+      <%= f.submit "Submit" %>
+  <% end %>
+  <br>
+  <p class="messages"><em><strong>
+    <%= link_to "Click here to sign up as a new user!", new_user_path %>
+  </strong></em></p>
+</div>

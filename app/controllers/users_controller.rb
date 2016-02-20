@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(self.user_params)
 
     if @user.save
-      flash[:message] = "'#{@user.handle}' created!"
+      flash[:message] = "Welcome '#{@user.handle}'!"
       redirect_to root_path
     else
       render :new
