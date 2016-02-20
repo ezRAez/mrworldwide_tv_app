@@ -1,46 +1,11 @@
-<%= form_for @video do |f| %>
-  <div class="field">
-    <%= f.label :youtube_id, "YouTube Id" %><br>
-    <%= f.text_field :youtube_id %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label :album %><br>
-    <%= f.text_field :album %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label :featured_artists %><br>
-    <%= f.text_field :featured_artists %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label :released_on %><br>
-    <%= f.date_select :released_on, order: [:month, :day, :year] %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label :tags %><br>
-    <%= f.text_field :tags %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
-
-<% if @video.errors.any? %>
-  <div id="error_explanation">
-  <p><strong>Errors found:</strong></p>
-    <ul>
-      <% @video.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<div class="form-container">
+  <%= bootstrap_form_for @video do |f| %>
+      <%= f.text_field :youtube_id, label: "YouTube ID" %>
+      <%= f.text_field :title %>
+      <%= f.text_field :album %>
+      <%= f.text_field :featured_artists %>
+      <%= f.date_select :released_on, order: [:month, :day, :year] %>
+      <%= f.text_field :tags %>
+      <%= f.submit "Submit" %>
+  <% end %>
+</div>

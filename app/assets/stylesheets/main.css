@@ -49,10 +49,16 @@ h1,
 h3,
 h4,
 nav,
-form,
 .controls,
 .messages {
   text-align: center;
+}
+
+.form-container {
+  width: 50%;
+  max-width: 900px;
+  min-width: 480px;
+  margin: 0 auto;
 }
 
 .field_with_errors {
