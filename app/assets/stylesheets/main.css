@@ -26,6 +26,7 @@ header {
   background-color: dodgerblue;
   padding: 1rem 0;
   margin-bottom: 0.5rem;
+  color: white;
 }
 
 header a:link,
