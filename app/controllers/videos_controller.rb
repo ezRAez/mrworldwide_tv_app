@@ -1,5 +1,11 @@
 class VideosController < ApplicationController
 
+  ############## AUTH  PROTECTION ################
+
+  # only authenticated users (logged in) can create,
+  #  update, or destroy videos
+  before_action :authenticate, except: [:index]
+
   ################### ROUTES #####################
 
   def index
@@ -52,5 +58,13 @@ class VideosController < ApplicationController
       :tags,
       :released_on
     )
+  end
+
+  def authenticate
+    unless logged_in?
+      flash[:message] =
+        "You must be logged in to access this section of the site."
+      redirect_to login_path
+    end
   end
 end
