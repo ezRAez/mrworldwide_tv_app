@@ -17,4 +17,12 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    # clear data from the session!
+    session[:user_id] = nil
+
+    flash[:message] = "Logged out!"
+    redirect_to root_path
+  end
 end
