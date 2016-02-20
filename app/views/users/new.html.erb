@@ -1,0 +1,15 @@
+<h4>Sign up as a new user!</h4>
+
+<div class="form-container">
+  <%= bootstrap_form_for @user do |f| %>
+      <%= f.text_field :email %>
+      <%= f.password_field :password %>
+      <%= f.password_field :password_confirmation %>
+      <br>
+      <%= f.text_field :handle %>
+      <%= f.text_field :profile_image_url %>
+      <%= f.text_area :statement, label: "Personal statement" %>
+
+      <%= f.submit "Submit" %>
+  <% end %>
+</div>
