@@ -12,6 +12,8 @@ class VideosController < ApplicationController
     if params[:search]
       @videos = Video.search(params[:search]) # check the Model file,
                                               # not a built-in from AR!
+    elsif params[:filter_by] && params[:query]
+      @videos = Video.where(params[:filter_by] => params[:query])
     else
       @videos = Video.all
     end

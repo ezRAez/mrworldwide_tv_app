@@ -15,7 +15,8 @@
   <% end %>
   <% @videos.order(released_on: :desc).each do |video| %>
     <article id="<%= video.fragment_id %>">
-      <h4><%= link_to video.title, video.youtube_link %> <%= "(#{video.album})" %></h4>
+      <h4><%= link_to video.title, video.youtube_link %>
+          (<%= link_to video.album, videos_path(filter_by: :album, query: video.album) %>)</h4>
       <span>ft. <%= video.featured_artists %> </span>
       <iframe class="video-embed" src="<%= video.embed_link %>" frameborder="0" allowfullscreen></iframe>
       <span><%= video.tags %></span>
