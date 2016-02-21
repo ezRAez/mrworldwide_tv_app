@@ -27,7 +27,8 @@ Watch the growth and development of the app over time by reading the
 4.  [x] I want to remove Pitbull videos…
 5.  [x] I want to protect videos from being added, edited, or removed
         by users who aren't logged in.
-6.  [ ] I want to search Pitbull videos by song title.
+6.  [x] I want to search Pitbull videos by song title, album, featured 
+        artists, or tags.
 7.  [ ] I want to filter Pitbull videos by album or featured artists.
 
 ## Visit It Live!
@@ -42,6 +43,6 @@ Watch the growth and development of the app over time by reading the
 [auth-pass]:  https://github.com/ga-students/WDI_DTLA_8/blob/master/work/w05/d04/instructor/user-models-with-passwords/user-models-with-passwords-lesson.md
 [auth-login]: https://github.com/ga-students/WDI_DTLA_8/blob/master/work/w05/d04/instructor/sessions-logging-in-by-hand/sessions-logging-in-by-hand-lesson.md
 [crud]:       https://github.com/h4w5/crud_related_models
-[heroku]:     https://devcenter.heroku.com/articles/rails4
+[heroku]:     https://devcenter.heroku.com/articles/getting-started-with-rails4
 [commits]:    https://github.com/h4w5/mrworldwide_tv_app/commits/master?page=2
 [deployed]:   https://stormy-fjord-66128.herokuapp.com

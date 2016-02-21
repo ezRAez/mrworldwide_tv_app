@@ -1,4 +1,13 @@
 <main>
+  <section class="form-container align-center">
+    <%= bootstrap_form_tag url: videos_path, method: :get do |f| %>
+      <%= f.text_field :search, placeholder: "Search videos...",
+                       hide_label: true, value: params[:search],
+                       autofocus: true, wrapper: { class: "float-left" } %>
+      <%= link_to "Clear", videos_path, class: "btn btn-primary" %>
+      <br style="clear: both">
+    <% end %>
+  </section>
   <% if flash[:message] %>
     <div class="messages">
       <p><strong><em><%= flash[:message] %></em></strong></p>

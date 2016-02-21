@@ -33,7 +33,7 @@ Video.create(
   title:            "Give Me Everything",
   album:            "Planet Pit",
   featured_artists: "Ne-Yo, Afrojack, Nayer",
-  released_on:      Date.parse("6-5-2011"),
+  released_on:      Date.parse("21-3-2011"),
   tags:             "#dale"
 )
 
@@ -42,7 +42,7 @@ Video.create(
   title:            "Time of Our Lives",
   album:            "Globalization",
   featured_artists: "Ne-Yo",
-  released_on:      Date.parse("25-12-2011"),
+  released_on:      Date.parse("17-11-2014"),
   tags:             "#dale"
 )
 
@@ -51,7 +51,7 @@ Video.create(
   title:            "Rain Over Me",
   album:            "Planet Pit",
   featured_artists: "Marc Anthony",
-  released_on:      Date.parse("22-6-2011"),
+  released_on:      Date.parse("20-6-2011"),
   tags:             "#dale #marcanthony"
 )
 
@@ -60,6 +60,24 @@ Video.create(
   title:            "Timber",
   album:            "Meltdown",
   featured_artists: "Ke$ha",
-  released_on:      Date.parse("25-11-2013"),
-  tags:             "#countrygold"
+  released_on:      Date.parse("7-10-2013"),
+  tags:             "#house #countrygold"
+)
+
+Video.create(
+  youtube_id:       "q5SG7U76tls",
+  title:            "Get It Started",
+  album:            "Global Warming",
+  featured_artists: "Shakira",
+  released_on:      Date.parse("25-6-2012"),
+  tags:             "#house"
+)
+
+Video.create(
+  youtube_id:       "bWc0uCj5bG4",
+  title:            "Maldito Alcohol",
+  album:            "ARMANDO",
+  featured_artists: "Afrojack",
+  released_on:      Date.parse("17-12-2010"),
+  tags:             "#dale"
 )

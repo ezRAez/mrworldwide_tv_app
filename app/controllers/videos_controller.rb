@@ -9,7 +9,12 @@ class VideosController < ApplicationController
   ################### ROUTES #####################
 
   def index
-    @videos = Video.all
+    if params[:search]
+      @videos = Video.search(params[:search]) # check the Model file,
+                                              # not a built-in from AR!
+    else
+      @videos = Video.all
+    end
   end
 
   def new
