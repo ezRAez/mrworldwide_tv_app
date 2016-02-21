@@ -8,22 +8,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <h1><%= link_to "Mr. Worldwide TV", videos_path %></h1>
-    <h3>Dale!</h3>
+  <div class="container">
+    <header>
+      <h1><%= link_to "Mr. Worldwide TV", videos_path %></h1>
+      <h3>Dale!</h3>
+    </header>
 
-    <nav>
-      <% if logged_in? %>
-        <em>Welcome, <%= current_user.handle %></em> &nbsp; | &nbsp;
-        <%= link_to "Add Video", new_video_path %> &nbsp; | &nbsp;
-        <%= link_to "Log Out", session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Log In", login_path %>
-      <% end %>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to("Add Video", new_video_path) if logged_in? %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li class="navbar-text"><em>Welcome, <%= current_user.handle %></em></li>
+            <li><%= link_to "Log Out", session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
+        </ul>
+      </div>
     </nav>
-  </header>
 
-  <%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>
