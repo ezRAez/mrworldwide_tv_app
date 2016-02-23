@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220002846) do
+ActiveRecord::Schema.define(version: 20160223051332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "term"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_videos", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "video_id"
+  end
+
+  add_index "tags_videos", ["tag_id"], name: "index_tags_videos_on_tag_id", using: :btree
+  add_index "tags_videos", ["video_id"], name: "index_tags_videos_on_video_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -32,9 +46,10 @@ ActiveRecord::Schema.define(version: 20160220002846) do
     t.string   "album"
     t.string   "featured_artists"
     t.date     "released_on"
-    t.string   "tags"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
 
+  add_foreign_key "tags_videos", "tags"
+  add_foreign_key "tags_videos", "videos"
 end

@@ -1,4 +1,6 @@
 class Video < ActiveRecord::Base
+  has_and_belongs_to_many :tags
+
   validates :youtube_id, uniqueness: true, presence: true, length: { is: 11 }
   validates :title, presence: true
 
