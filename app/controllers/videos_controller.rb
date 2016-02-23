@@ -37,6 +37,7 @@ class VideosController < ApplicationController
 
   def edit
     @video = Video.find(params[:id])
+    @tag = Tag.new
   end
 
   def update
@@ -64,7 +65,6 @@ class VideosController < ApplicationController
       :album,
       :youtube_id,
       :featured_artists,
-      :tags,
       :released_on
     )
   end

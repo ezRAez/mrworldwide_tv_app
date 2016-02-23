@@ -1,11 +1,33 @@
-<div class="form-container">
+<h3>Video Data</h3>
+<section class="form-container">
   <%= bootstrap_form_for @video do |f| %>
       <%= f.text_field :youtube_id, label: "YouTube ID" %>
       <%= f.text_field :title %>
       <%= f.text_field :album %>
       <%= f.text_field :featured_artists %>
       <%= f.date_select :released_on, order: [:month, :day, :year] %>
-      <%= f.text_field :tags %>
       <%= f.submit "Submit" %>
   <% end %>
-</div>
+</section>
+
+<% if @video.tags.present? %>
+  <h3>Current Tags</h3>
+  <section class="tag-container">
+    <% @video.tags.each do |tag| %>
+      <%= link_to video_tag_path(@video, tag), method: :delete, class: "btn btn-default" do %>
+        <%= tag.term %> <i class="glyphicon glyphicon-remove" style="color: red;"></i>
+      <% end %>
+      &nbsp; &nbsp;
+    <% end %>
+  </section>
+<% end %>
+
+<h3>Add New Tag</h3>
+<section class="tag-container">
+  <%= bootstrap_form_for [@video, @tag] do |f| %>
+    <%= f.text_field :term, hide_label: true, wrapper: { class: "float-left" } %>
+    <%= f.submit "Submit", inline: true %>
+    <br style="clear: both">
+  <% end %>
+</section>
+

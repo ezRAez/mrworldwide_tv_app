@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "videos#index"
 
-  resources :videos, except: [:show]
+  resources :videos, except: [:show] do
+    resources :tags, only: [:create, :destroy]
+  end
 
   resources :users, only: [:new, :create]
 
