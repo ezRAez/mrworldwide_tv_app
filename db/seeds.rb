@@ -24,4 +24,23 @@ timber = Video.create(
   youtube_id: "hHUbLv4ThOo"
 )
 
+calle_ocho = Video.create(
+  title: "I Know You Want Me (Calle Ocho)",
+  youtube_id: "E2tMV96xULk"
+)
+
 dale = Tag.create word: "#dale"
+kesha = Tag.create word: "#ke$ha"
+
+timber.tags << [dale, kesha]
+calle_ocho.tags << dale
+
+# puts timber.tags
+# puts calle_ocho.tags
+# puts dale.videos
+# puts kesha.videos
+
+
+
+
+
