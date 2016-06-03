@@ -1,5 +1,6 @@
 User.delete_all
 Video.delete_all
+Tag.delete_all
 
 pj = User.new(
   email:                 "pj@ga.co",
@@ -23,5 +24,4 @@ timber = Video.create(
   youtube_id: "hHUbLv4ThOo"
 )
 
-puts timber.errors.full_messages
-
+dale = Tag.create word: "#dale"
