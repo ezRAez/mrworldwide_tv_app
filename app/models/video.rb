@@ -6,13 +6,17 @@ class Video < ActiveRecord::Base
 
   def self.search query
     wildcarded_query = "%#{query}%"
-    where(
-      "title ILIKE :title OR album ILIKE :album OR featured_artists ILIKE :featured OR tags ILIKE :tags",
-      title:    wildcarded_query,
-      album:    wildcarded_query,
-      featured: wildcarded_query,
-      tags:     wildcarded_query
-    )
+
+    self
+      .includes(:tags)
+      .where(
+        "title ILIKE :title OR album ILIKE :album OR featured_artists ILIKE :featured OR tags.term ILIKE :tags",
+        title:    wildcarded_query,
+        album:    wildcarded_query,
+        featured: wildcarded_query,
+        tags:     wildcarded_query
+      )
+      .references(:tags)
   end
 
   def youtube_link
