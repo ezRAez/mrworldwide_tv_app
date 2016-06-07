@@ -1,0 +1,15 @@
+<main>
+  <%= form_tag do %>
+
+  <% end %>
+
+  <ul class="videos">
+    <% @videos.each do |video| %>
+      <li>
+        <strong><%= video.title %></strong><br>
+        <iframe width="460" height="315" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
+        <!-- <iframe width="460" height="315" src="https://www.youtube.com/embed/<%= video.youtube_id %>" frameborder="0" allowfullscreen></iframe> -->
+      </li>
+    <% end %>
+  </ul>
+</main>
